@@ -9,5 +9,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-ENV PYTHONPATH /app
-CMD ["/app/main.py"]
+CMD [ "python3" , "main.py" ]
