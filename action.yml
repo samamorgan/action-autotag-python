@@ -1,13 +1,25 @@
-name: "Python Container Action Template"
-description: "Get started with Python Container actions"
-author: "Jacob Tomlinson"
+name: Python Auto Version Tag
+description: Automatically generate new tags when version file changes
+author: Sam Morgan
+branding:
+  icon: tag
+  color: blue
 inputs:
-  myInput:
-    description: "Input to use"
-    default: "world"
+  path:
+    description: Path to version file
+    required: true
+  variable:
+    description: Variable name containing version information
+    required: true
+  prefix:
+    description: Prefix to add to the version tag
+    required: false
+  suffix:
+    description: Suffix to add to the version tag
+    required: false
 outputs:
-  myOutput:
-    description: "Output from the action"
+  version:
+    description: The version defined in the version file
 runs:
-  using: "docker"
-  image: "Dockerfile"
+  using: docker
+  image: Dockerfile
