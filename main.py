@@ -14,7 +14,7 @@ def main():
     suffix = os.environ["INPUT_SUFFIX"]
     version_tag = f"{prefix}{about[variable]}{suffix}"
 
-    g = Github(os.environ["GITHUB_TOKEN"] or os.environ["INPUT_GITHUB_TOKEN"])
+    g = Github(os.environ["INPUT_GITHUB_TOKEN"])
     repo = g.get_repo(os.environ["github"]["repository"])
 
     for tag in repo.get_tags():
